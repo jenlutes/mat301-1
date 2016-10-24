@@ -9,6 +9,7 @@ Before we begin, it is noteworthy to list the synonyms for various database term
 | Recordset | Attribute |
 |Tuple | Component  |
 
+
 ---
 
 Data Query Language (DQL) is a sub-language of Structured Query Language (SQL).  
