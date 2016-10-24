@@ -3,7 +3,7 @@
 1. Define the terms: relation, tuple, attribute, record, and field.
 2. What are keys in a relation?
 
-
+25
 3. What is a surrogate key and how is it used?
 
 4. In the following equation, Area = Length x Width, identify the determinant(s).
