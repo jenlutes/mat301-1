@@ -158,51 +158,82 @@ SELECT 1.35*price AS `Sale Price` FROM Products;
 ===
 
 1. Select all products (UPC) made in China whose price is less than $50.
-SELECT * FROM unemath_Products WHERE country = ‘China’ PRICE < 50;
+`SELECT * FROM unemath_Products WHERE country = ‘China’ PRICE < 50;`
+
+C
 
 2. Find products with "bird bath" in the description.
-SELECT * FROM unemath_Umar.Products WHERE description LIKE'%Bird Bath%';
+`SELECT * FROM unemath_Umar.Products WHERE description LIKE'%Bird Bath%';`
+
+C
 
 3. Find products whose cost is between $10 and $100.
-SELECT * FROM unemath_Umar.Products WHERE price between 10 and 100;
+`SELECT * FROM unemath_Umar.Products WHERE price between 10 and 100;`
+
+C
 
 4. Find products whose cost is less than or equal to $59.99.
-SELECT * FROM unemath_Umar.Products WHERE price <=59.99;
+`SELECT * FROM unemath_Umar.Products WHERE price <=59.99;`
+
+C
 
 5. Find products whose ID is between 5000 and 6000 or 7483, 4939, 3452, 9848, 11293, 12001.
-SELECT * FROM unemath_Umar.Products WHERE product_id between 5000 and 6000 OR product_id in (7483, 4939, 3452, 9848, 11293, 12001);
+`SELECT * FROM unemath_Umar.Products WHERE product_id between 5000 and 6000 OR product_id in (7483, 4939, 3452, 9848, 11293, 12001);`
+
+C
 
 6. Find products that are not between 5000 and 6000 or 7483, 4939, 3452, 9848, 11293, 12001.
 
 SELECT * FROM unemath_Umar.Products WHERE product_id not between 5000 and 6000 and not product_id IN (7483, 4939, 3452, 9848, 11293, 12001);
 
+INTERESTING!   DOES THIS RETURN THE SAME AS
+
+`SELECT * FROM unemath_Umar.Products WHERE product_id not between 5000 and 6000 and  product_id NOT IN (7483, 4939, 3452, 9848, 11293, 12001);?`
+
 
 7. Find products whose country code is NULL.
 SELECT * FROM unemath_Umar.Products WHERE country = ‘NULL’;
 
+C.  QUOTES SHOULDN'T BE NECESSARY
+
 8. Calculate the shipping volume and report it as 'Volume'.
 SELECT ship_width*ship_length*ship_depth AS ship_volume FROM unemath_umar.Products;
 
+C
+
 9. Suppose you want to have a 35% markup on all products and sales tax is 7.5%.  Determine the 'Sales Price' of each product.
 SELECT 1.075* (1.35*price) AS sales_price FROM unemath_Umar.Products;
+
+C
+
 10. True or False: Both conditions when using the OR operator must be true.
 FALSE
+
+C
 
 11. What is the logical negation of the IN operator?
 NOT in
 
+C (SEE ABOVE)
+
 12. What is wrong with the following statement: `SELECT * FROM Products WHERE price BETWEEN 10, 100;
 SELECT * FROM unemath_Umar.Products WHERE price BETWEEN 10 and 100;
+
+C
 
 13. Select products with length less than 12 inches and sort descending.
 SELECT * FROM unemath_Umar.Products WHERE length <12 ORDER BY 12;
 
+C
+
 14. How many products are there whose price is between $10 and $20?
 SELECT * FROM unemath_Umar.Products WHERE price BETWEEN 10 and 20;
+
+C.  SHOULD USE COUNT FOR HOW MANY INSTEAD OF VIEWING HOW MANY EFFECTED ROWS
 
 15. How many products are there made in China whose MSRP is between $10 and $20.
 SELECT * country FROM unemath_Umar.Products WHERE country = ‘China’ WHERE msrp BETWEEN 10 and 20;
 
-
+C (SAME AS ABOVE)
 
 
